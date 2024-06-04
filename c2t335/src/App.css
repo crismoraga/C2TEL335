@@ -3,10 +3,21 @@
 }
 
 .App-h1 {
-font-size: 3rem;
-font-weight: bold;
-color: #ff6347; 
-text-shadow: 2px 2px 4px #000000;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #47cbff;
+  text-shadow: 
+    1px 1px 0 #000,   
+    2px 2px 0 #000,   
+    3px 3px 0 #000,   
+    4px 4px 0 #000,   
+    5px 5px 0 #000;   
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.App-h2 {
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .App-logo {
@@ -20,8 +31,7 @@ text-shadow: 2px 2px 4px #000000;
   }
 }
 
-.App-header {
-  background: linear-gradient(to right, #0000ff, #87cefa); /* Degradado de azul a azul claro */
+.App-header, .body{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,17 +39,27 @@ text-shadow: 2px 2px 4px #000000;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background: linear-gradient(270deg, #0000ff, #87cefa, #1e90ff, #00bfff);
+  background-size: 600% 600%;
+  animation: gradientAnimation 15s ease infinite;
 }
 
-.Container{
-  background: linear-gradient(to right, #0000ff, #87cefa); /* Degradado de azul a azul claro */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.footer {
+  background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+  background-size: 600% 600%;
+  animation: rainbowAnimation 15s ease infinite;
+}
+
+@keyframes rainbowAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .App-link {
@@ -53,4 +73,38 @@ text-shadow: 2px 2px 4px #000000;
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+button {
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
 }
